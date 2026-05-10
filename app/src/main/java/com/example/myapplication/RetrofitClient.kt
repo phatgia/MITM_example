@@ -17,6 +17,9 @@ object RetrofitClient {
 
         val clientBuilder = OkHttpClient.Builder()
             .addInterceptor(logging)
+            .connectTimeout(120, java.util.concurrent.TimeUnit.SECONDS) // Cho phép chờ 2 phút
+            .readTimeout(120, java.util.concurrent.TimeUnit.SECONDS)    // Để bạn có dư dả thời gian
+            .writeTimeout(120, java.util.concurrent.TimeUnit.SECONDS)   // sửa nội dung trên Burp Suite
 
         // Giai đoạn 3: Bật Certificate Pinning ở đây
         if (enablePinning) {
@@ -24,8 +27,8 @@ object RetrofitClient {
             val hostname = BASE_URL.replace("https://", "").replace("/", "")
             
             val certificatePinner = CertificatePinner.Builder()
-                // TODO: Thay thế mã băm này bằng mã thực tế lấy từ OpenSSL
-                .add(hostname, "sha256/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=") 
+                // Mã băm (Hash) thật của server ngrok hiện tại
+                .add(hostname, "sha256/9XXndalRJPNi9GGGQIraZDbVmNA1nTdRBGX8OmB/9Ek=") 
                 .build()
 
             clientBuilder.certificatePinner(certificatePinner)
