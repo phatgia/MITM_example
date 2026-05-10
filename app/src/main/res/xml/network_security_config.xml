@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config>
+        <trust-anchors>
+            <certificates src="system" />
+            <!-- Dòng dưới đây cố tình được thêm vào để chấp nhận chứng chỉ cài thủ công (Burp CA) -->
+            <!-- Phục vụ cho giai đoạn Demo MitM. Khi vá lỗi, bạn sẽ xóa dòng này đi. -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
