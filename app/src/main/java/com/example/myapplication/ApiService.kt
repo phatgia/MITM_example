@@ -4,7 +4,6 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
 
-// Models
 data class LoginRequest(val username: String, val password: String)
 data class LoginResponse(val success: Boolean, val token: String?, val message: String?)
 
