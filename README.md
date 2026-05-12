@@ -1,16 +1,16 @@
-# Đồ án Bảo mật Android: Tấn công MitM & SSL Certificate Pinning
+# Đồ án: Tấn công MitM & SSL Certificate Pinning
 
 Dự án này là một bài Demo thực hành môn An toàn thông tin / Bảo mật trên nền tảng Android. 
 Mục tiêu của đồ án là chứng minh lỗ hổng **Man-in-the-Middle (MitM)** khi ứng dụng tin tưởng các chứng chỉ không an toàn (User CA) và cách phòng chống triệt để bằng kỹ thuật **SSL Certificate Pinning**.
 
-## 📁 Cấu trúc thư mục (Monorepo)
+##  Cấu trúc thư mục (Monorepo)
 
 - `app/` & các thư mục gốc: Chứa Source code của ứng dụng Android Client (viết bằng Kotlin).
 - `Backend/`: Chứa mã nguồn Server API đơn giản (viết bằng Node.js + Express).
 
 ---
 
-## 🚀 Hướng dẫn Cài đặt & Khởi chạy
+##  Hướng dẫn Cài đặt & Khởi chạy
 
 ### 1. Khởi chạy Backend Server
 Cần có [Node.js](https://nodejs.org/) được cài đặt trên máy.
@@ -42,7 +42,7 @@ Cần có [Node.js](https://nodejs.org/) được cài đặt trên máy.
 
 ---
 
-## 🎯 Kịch bản Test (Dành cho Giảng viên/Người chấm)
+##  Kịch bản Test 
 
 Bài test gồm 2 giai đoạn chính, được thực hiện kết hợp với phần mềm **Burp Suite Community Edition**.
 
